@@ -1,16 +1,13 @@
 import React from 'react'
 
-class ProductCategoryRow extends React.Component {
-  render() {
-    const category = this.props.category;
-    return (
-      <tr>
-        <th colSpan="2">
-          {category}
-        </th>
-      </tr>
-    );
-  }
+const ProductCategoryRow = (props) => {
+  return (
+    <tr>
+      <td colSpan="2" className="category">
+        {props.children}
+      </td>
+    </tr>
+  )
 }
 
 export default ProductCategoryRow
