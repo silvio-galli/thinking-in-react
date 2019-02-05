@@ -4,6 +4,7 @@ import ProductRow from './ProductRow'
 
 function ProductTable(props) {
   const displayProducts = filterData(props.products)
+  
   return (
     <table className="products" cellPadding='0' cellSpacing='0'>
       <thead>

@@ -10,18 +10,23 @@ class FilterableProductTable extends React.Component {
       inStock: false
     }
     this._handleSearch = this._handleSearch.bind(this)
+    this._handleCheckbox = this._handleCheckbox.bind(this)
+
   }
 
   render() { 
-    const filteredData = this.props.data
-    .filter( product => product.name.toUpperCase().includes(this.state.searchWord.toUpperCase()) )
-    .filter( product => this.state.inStock ? product.stocked === true : product.stocked === true || product.stocked === false )
+    let filteredData = this.props.data
+    .filter( product => new RegExp(this.state.searchWord, 'gi').test(product.name) )
+    if (this.state.inStock) {
+      filteredData  = filteredData.filter( product =>  product.stocked)
+    }
+
     return (
       <div className="filterable-products">
         <h1>Products</h1>
         <Search
           handleSearch={ this._handleSearch}
-          handleCheckbox={ () => this._handleCheckbox() }
+          handleCheckbox={ this._handleCheckbox }
           />
         <ProductTable
           products={filteredData}
@@ -32,16 +37,13 @@ class FilterableProductTable extends React.Component {
 
   _handleSearch(event) {
     this.setState({
-      searchWord: event.target.value
+      [event.target.name]: event.target.value
     })
   }
   
   _handleCheckbox() {
-    console.log( "BEFORE => ", this.state.inStock ) 
-    let value = this.state.inStock === false ? true : false;
-    console.log( "VALUE => ", value )
     this.setState({
-      inStock: value
+      inStock: !this.state.inStock
     })
   }
 }

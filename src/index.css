@@ -4,6 +4,19 @@ body {
   font-family: sans-serif;
 }
 
+.filterable-products {
+  width: 40%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 3%;
+  border: 2px solid #666;
+}
+
+.products {
+  width :100%;
+  line-height: 1.3em;
+}
+
 .category {
   font-weight: bold;
 }
