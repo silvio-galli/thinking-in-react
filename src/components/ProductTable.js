@@ -7,7 +7,7 @@ class ProductTable extends React.Component {
     const rows = [];
     let lastCategory = null;
     
-    // this is ok only if the data are sorted by category
+    // TODO: this is ok only if the data are sorted by category
     // if the rows are shuffled the result is not correct
     this.props.products.forEach((product) => {
       if (product.category !== lastCategory) {
