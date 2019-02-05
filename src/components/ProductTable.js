@@ -1,10 +1,14 @@
 import React from 'react'
+import ProductCategoryRow from './ProductCategoryRow'
+import ProductRow from './ProductRow'
 
 class ProductTable extends React.Component {
   render() {
     const rows = [];
     let lastCategory = null;
     
+    // this is ok only if the data are sorted by category
+    // if the rows are shuffled the result is not correct
     this.props.products.forEach((product) => {
       if (product.category !== lastCategory) {
         rows.push(
