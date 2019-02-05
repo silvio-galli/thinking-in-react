@@ -4,12 +4,30 @@ body {
   font-family: sans-serif;
 }
 
+h1 {
+  text-align: center;
+}
+
 .filterable-products {
   width: 40%;
   margin-right: auto;
   margin-left: auto;
   padding: 3%;
   border: 2px solid #666;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+#searchInput {
+  width: 100%;
+}
+
+table th {
+  text-align: left;
+  background-color: black;
+  color: #fff;
 }
 
 .products {

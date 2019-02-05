@@ -6,7 +6,7 @@ class FilterableProductTable extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      searchWord: '',
+      searchInput: '',
       inStock: false
     }
     this._handleSearch = this._handleSearch.bind(this)
@@ -16,7 +16,7 @@ class FilterableProductTable extends React.Component {
 
   render() { 
     let filteredData = this.props.data
-    .filter( product => new RegExp(this.state.searchWord, 'gi').test(product.name) )
+    .filter( product => new RegExp(this.state.searchInput, 'gi').test(product.name) )
     if (this.state.inStock) {
       filteredData  = filteredData.filter( product =>  product.stocked)
     }

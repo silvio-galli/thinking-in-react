@@ -5,9 +5,11 @@ const Search = (props) => {
     <form>
       <input
         type="text"
-        name="searchWord"
+        id="searchInput"
+        name="searchInput"
         placeholder="Search..."
         onChange={(e) => props.handleSearch(e)}
+        autoFocus
       />
       <br />
       <input type="checkbox" name="inStock" onChange={props.handleCheckbox} />
