@@ -6,8 +6,8 @@ function ProductTable(props) {
   const displayProducts = filterData(props.products)
   
   return (
-    <table className="products" cellPadding='0' cellSpacing='0'>
-      <thead>
+    <table className="table products-table" cellPadding='0' cellSpacing='0'>
+      <thead className="thead-light">
         <tr>
           <th>Name</th>
           <th>Price</th>

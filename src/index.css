@@ -10,27 +10,20 @@ h1 {
 
 .filterable-products {
   width: 40%;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 20px auto;
   padding: 3%;
   border: 2px solid #666;
 }
 
-form {
-  margin-bottom: 20px;
+.form-check-input {
+  margin-left: 0;
 }
 
-#searchInput {
-  width: 100%;
+.form-check-label {
+  margin-left: 1.25em;
 }
 
-table th {
-  text-align: left;
-  background-color: black;
-  color: #fff;
-}
-
-.products {
+.products-table {
   width :100%;
   line-height: 1.3em;
 }
